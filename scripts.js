@@ -1,6 +1,6 @@
-let WORD_DURATION = 1000;
-let PAUSE_DURATION = 400;
-let DIT_DURATION = 120;
+let WORD_DURATION = 900;
+let PAUSE_DURATION = 350;
+let DIT_DURATION = 140;
 
 const ALPHABET = {
 	'А': '.-',
@@ -46,7 +46,7 @@ const ALPHABET = {
 	'9': '----.',
 	'0': '-----',
   
-	'.': '.....',
+	'.': '......',
 }
 
 const REVERSED = Object.entries(ALPHABET)
