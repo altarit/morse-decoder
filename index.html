@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Morse-decoder</title>
+  <meta name="description" content="Decodes Morse code">
+  <meta name="author" content="altarit">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="root">
+  <button id="pressButton">
+	Click
+  </button>
+  <textarea id="result">
+  
+  </textarea>
+  <div class="controls">
+	<button id="copyButton">
+	  Copy
+	</button>
+	<button id="clearButton">
+	  Clear
+	</button>
+  </div>
+
+  <div id="output">
+
+  </div>
+  
+  <div class="fixedBottom">
+	<input id="ditDurationInput" type="number" step="10" min="30" max="2000"/>
+   ms - dit duration<br/>
+	<input id="pauseDurationInput" type="number" step="10" min="100" max="2000"/>
+	ms - symbol delimeter duration<br/>
+	<input id="wordDurationInput" type="number" step="50" min="200" max="2000"/>
+	ms - word delimeter duration<br/>
+  </div>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>
