@@ -10,34 +10,62 @@
 </head>
 <body>
 <div id="root">
-  <button id="pressButton">
-	Click
-  </button>
-  <textarea id="result">
-  
-  </textarea>
-  <div class="controls">
-	<button id="copyButton">
-	  Copy
-	</button>
-	<button id="clearButton">
-	  Clear
-	</button>
+  <header class="header">
+    <h1 class="header__title">Morse decoder</h1>
+  </header>
+  <div class="content">
+    <div class="options">
+      <select id="alphabetSelect" class="options__alphabet">
+        <option>RUS</option>
+        <option>ENG</option>
+      </select>
+      <button id="soundButton" class="options__sound">Sound</button>
+      <span class="options__space"></span>
+      <button id="settingsButton" class="options__settings">Settings</button>
+    </div>
+
+    <div class="logContainer">
+      <div id="logArea">
+      </div>
+    </div>
+
+    <button id="pressButton">
+      Click
+    </button>
+    <textarea id="result">
+    </textarea>
+    <div class="controls">
+      <button id="copyButton">
+        Copy
+      </button>
+      <button id="clearButton">
+        Clear
+      </button>
+    </div>
   </div>
 
-  <div id="output">
+  <footer class="footer">
+    <span class="footer__text">Created just for fun</span>
+  </footer>
 
-  </div>
-  
-  <div class="fixedBottom">
-	<input id="ditDurationInput" type="number" step="10" min="30" max="2000"/>
-   ms - dit duration<br/>
-	<input id="pauseDurationInput" type="number" step="10" min="100" max="2000"/>
-	letter delimeter duration<br/>
-	<input id="wordDurationInput" type="number" step="50" min="200" max="2000"/>
-	word delimeter duration<br/>
+  <div id="settingsPopup" class="settingsPopup" style="visibility: hidden">
+    <div class="settingsPopup__title">
+      <span class="settingsPopup__title-text">Settings</span>
+      <button id="settingsPopupCloseButton">X</button>
+    </div>
+    <div class="settingsPopup__speed">
+      Speed: <span id="ditDurationLabel"></span><br>
+      <input id="speedInput" type="range" min="40" max="400" step="1" value="50"><br />
+    </div>
+    <div class="settingsPopup__volume">
+      Volume: <br>
+      <input id="volumeInput" type="range" min="1" max="100" step="1" value="20"><br />
+    </div>
   </div>
 </div>
-<script src="scripts.js"></script>
+<script src="js/configs.js"></script>
+<script src="js/alphabet.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/handlers.js"></script>
 </body>
 </html>
