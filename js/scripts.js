@@ -27,6 +27,7 @@ let isPressed = false
 let buffer = []
 let word = []
 let text = []
+let log = []
 
 function playSound() {
   if (!sound.autoplay) {
@@ -63,18 +64,21 @@ function finishChar (spaceTime, isNextWord) {
       char = '???'
     }
 
-    logArea.innerHTML = `${char} ${code} <br/>` + logArea.innerHTML
+    if (log.length >= 40) {
+      log.splice(0, 20)
+      logArea.innerHTML = log.join('<br>') + '<br>'
+    }
+
+    log.push(`${char} ${code}`);
+    logArea.innerHTML = logArea.innerHTML + `${char} ${code} <br>`
     buffer.length = 0
     console.log('delimeter')
   }
 
   if (isNextWord && word.length) {
     const str = word.join('')
-    if (logArea.innerHTML.length > 100) {
-      logArea.innerHTML = logArea.innerHTML.substring(0, 80)
-    }
     if (str !== ' ') {
-      result.value += ` ${str}`
+      result.value += (result.value ? ` ${str}` : str)
     }
     word.length = 0
     text.push(str)
@@ -142,6 +146,7 @@ function handleClearClick() {
   text.length = 0
   buffer.length = 0
   word.length = 0
+  log.length = 0
   result.value = ''
   logArea.innerText = ''
 }
