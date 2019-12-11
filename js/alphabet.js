@@ -55,9 +55,10 @@ const ENG = {
   'D': '-..',
   'E': '.',
   'F': '..-.',
-  'H': '--.',
-  'I': '....',
-  'J': '..',
+  'G': '--.',
+  'H': '....',
+  'I': '..',
+  'J': '.---',
   'K': '-.-',
   'L': '.-..',
   'M': '--',
@@ -83,6 +84,11 @@ function reverseAlphabet(alphabet) {
       res[value] = key
       return res
     }, {})
+}
+
+const ALPHABET = {
+  RUS,
+  ENG
 }
 
 const REVERSED = {

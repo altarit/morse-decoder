@@ -18,6 +18,7 @@ copyButton.onclick = handleCopyClick
 // Settings
 speedInput.onchange = handleSpeedChange
 settingsButton.onclick = settingsPopupCloseButton.onclick = handleTogglePopup
+alphabetButton.onclick = alphabetPopupCloseButton.onclick = handleToggleAlphabetPopup
 alphabetSelect.onchange = handleAlphabetChange
 soundButton.onclick = handleToggleSound
 volumeInput.onchange = handleVolumeChange

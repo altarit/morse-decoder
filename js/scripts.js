@@ -13,6 +13,7 @@ let alphabetName = localStorage.getItem('alphabet')
 if (!alphabetName || !REVERSED[alphabetName]) {
   alphabetName = 'RUS'
 }
+let alphabet = ALPHABET[alphabetName]
 let reversed = REVERSED[alphabetName]
 result.value = ''
 
@@ -174,9 +175,25 @@ function handleTogglePopup() {
   settingsPopup.style.visibility = isSettingsPopupOpen ?  'visible' : 'hidden';
 }
 
+let isAlphabetPopupOpen = false
+function handleToggleAlphabetPopup() {
+  isAlphabetPopupOpen = !isAlphabetPopupOpen
+  if (isAlphabetPopupOpen) {
+    alphabetPopup.style.visibility = 'visible'
+
+    alphabetContent.innerHTML = Object.entries(alphabet).map(([key, value]) =>
+      `<span class="abc-item">${key}: ${value}</span>`
+    ).join('')
+  } else {
+    alphabetPopup.style.visibility = 'hidden';
+  }
+  alphabetPopup.style.visibility = isAlphabetPopupOpen ?  'visible' : 'hidden';
+}
+
 alphabetSelect.value = alphabetName
 function handleAlphabetChange(e) {
   const val = e.target.value
+  alphabet = ALPHABET[val]
   reversed = REVERSED[val]
   localStorage.setItem('alphabet', val)
 }

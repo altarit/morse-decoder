@@ -20,6 +20,7 @@
         <option>ENG</option>
       </select>
       <button id="soundButton" class="options__sound">Sound</button>
+      <button id="alphabetButton" class="options__settings">ABC</button>
       <span class="options__space"></span>
       <button id="settingsButton" class="options__settings">Settings</button>
     </div>
@@ -60,6 +61,17 @@
     <div class="settingsPopup__volume">
       Volume: <br>
       <input id="volumeInput" type="range" min="1" max="100" step="1" value="20"><br />
+    </div>
+  </div>
+
+
+  <div id="alphabetPopup" class="alphabetPopup" style="visibility: hidden">
+    <div class="alphabetPopup__title">
+      <span class="alphabetPopup__title-text">Alphabet</span>
+      <button id="alphabetPopupCloseButton">X</button>
+    </div>
+    <div id="alphabetContent">
+
     </div>
   </div>
 </div>

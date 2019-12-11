@@ -116,7 +116,7 @@ body {
 }
 
 /* ===== Settings ===== */
-.settingsPopup {
+.settingsPopup, .alphabetPopup {
   position: fixed;
   top: 60px;
   bottom: 60px;
@@ -128,12 +128,17 @@ body {
   color: #FFFFFF;
 }
 
-.settingsPopup__title {
+.settingsPopup__title, .alphabetPopup__title {
   display: flex;
   margin-bottom: 20px;
 }
 
-.settingsPopup__title-text {
+#settingsPopupCloseButton, #alphabetPopupCloseButton {
+  width: 40px;
+  height: 30px;
+}
+
+.settingsPopup__title-text, .alphabetPopup__title-text {
   flex: 1 1;
 }
 
@@ -151,4 +156,20 @@ body {
 
 .fixedBottom input {
   margin-bottom: 5px;
+}
+
+#alphabetContent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: calc(100% - 40px);
+  font-size: 20px;
+}
+
+.abc-item {
+  display: inline-block;
+  min-width: 80px;
+  max-width: 80px;
+  margin-right: 20px;
+  white-space: nowrap;
 }
